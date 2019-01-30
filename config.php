@@ -15,7 +15,7 @@ define("TRIALS", 20);
 
 define("SMALL",     [1 <<  9, 1 << 14]);
 define("MEDIUM",    [1 << 15, 1 << 20]);
-define("LARGE",     [1 << 19, 1 << 24]);
+define("LARGE",     [1 << 16, 1 << 21]);
 
 /**
  * The number of samples to take during the benchmark.
@@ -147,6 +147,33 @@ return [
             function($i) { global $a; $a[] = new \stdClass(); },
             function()   { global $a; $a = null; },
         ]
+    ]],
+
+    'Sequence::shift' => [ EXPONENTIAL, [
+
+        PHP_ARRAY => [
+            function($n) { global $a; $a = range(1, $n); },
+            function($i) { global $a; array_shift($a); },
+            function()   { global $a; $a = null; },
+        ],
+
+        SPL_DLL => [
+            function($n) { global $a; $a = new SplDoublyLinkedList(); for (; $n--; $a[] = rand()); },
+            function($i) { global $a; $a->shift(); },
+            function()   { global $a; $a = null; },
+        ],
+
+        VECTOR => [
+            function($n) { global $a; $a = new Vector(range(1, $n)); },
+            function($i) { global $a; $a->shift(); },
+            function()   { global $a; $a = null; },
+        ],
+
+        DEQUE => [
+            function($n) { global $a; $a = new Deque(range(1, $n)); },
+            function($i) { global $a; $a->shift(); },
+            function()   { global $a; $a = null; },
+        ],
     ]],
 
     'Sequence::unshift' => [ EXPONENTIAL, [

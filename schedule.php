@@ -5,48 +5,26 @@
  */
 return [
 
-    // 'Stack::pop' => [
-    //     [MEDIUM, [
-    //         SPL_STACK,
-    //         STACK,
-    //     ]],
-    // ],
+     'Set vs. array_unique' => [
+         [SMALL, [
+             PHP_ARRAY,
+             SET,
+         ]]
+     ],
 
-    // 'PriorityQueue::push' => [
-    //     [MEDIUM, [
-    //         SPL_PQ,
-    //         PRIORITY_QUEUE,
-    //         // QUEUE,
-    //     ]],
-    // ],
+     'Map::put' => [
+         [MEDIUM, [
+             PHP_ARRAY,
+             MAP,
+         ]],
+     ],
 
-    // 'Set::add' => [
-    //     [MEDIUM, [
-    //         SPL_OS,
-    //         SET,
-    //     ]]
-    // ],
-
-    // 'Set vs. array_unique' => [
-    //     [SMALL, [
-    //         PHP_ARRAY,
-    //         SET,
-    //     ]]
-    // ],
-
-    // 'Map::put' => [
-    //     [MEDIUM, [
-    //         PHP_ARRAY,
-    //         MAP,
-    //     ]],
-    // ],
-
-    // 'Map::remove' => [
-    //     [MEDIUM, [
-    //         PHP_ARRAY,
-    //         MAP,
-    //     ]],
-    // ],
+     'Map::remove' => [
+         [MEDIUM, [
+             PHP_ARRAY,
+             MAP,
+         ]],
+     ],
 
     'Sequence::push (allocated)' => [
         [MEDIUM, [
@@ -66,21 +44,53 @@ return [
         ]],
     ],
 
-    // 'Sequence::unshift' => [
-    //     [MEDIUM, [
-    //         PHP_ARRAY,
-    //         SPL_DLL,
-    //         VECTOR,
-    //         DEQUE,
-    //     ]],
-    // ],
+    'Sequence::shift' => [
+        [MEDIUM, [
+            PHP_ARRAY,
+            SPL_DLL,
+            VECTOR,
+            DEQUE,
+        ]],
+    ],
 
-    // 'Sequence::pop' => [
-    //     [MEDIUM, [
-    //         PHP_ARRAY,
-    //         SPL_DLL,
-    //         VECTOR,
-    //         DEQUE,
-    //     ]],
-    // ],
+     'Sequence::unshift' => [
+         [MEDIUM, [
+             PHP_ARRAY,
+             SPL_DLL,
+             VECTOR,
+             DEQUE,
+         ]],
+     ],
+
+     'Sequence::pop' => [
+         [MEDIUM, [
+             PHP_ARRAY,
+             SPL_DLL,
+             VECTOR,
+             DEQUE,
+         ]],
+     ],
+
+    'Stack::pop' => [
+        [MEDIUM, [
+            SPL_STACK,
+            STACK,
+        ]],
+    ],
+
+    'PriorityQueue::push' => [
+        [MEDIUM, [
+            SPL_PQ,
+            PRIORITY_QUEUE,
+            // QUEUE,
+        ]],
+    ],
+
+    'Set::add' => [
+        [MEDIUM, [
+            SPL_OS,
+            SET,
+        ]]
+    ],
+
 ];
